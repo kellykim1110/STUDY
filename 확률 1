@@ -32,15 +32,12 @@ Random variables Don't help
 어떤 원소가 시그마 필드에 포함되지 않으면 그 원소는 측정되지 않는다. ( If the element is not inside a sigma-field, it cannot be measured )
 
 따라서, 다음과 같이 정의 할 수 있다.
-A set U and a lsigma-field B of subsets of U form a **measurable space** (U, B).
-A **measure** M defined on measureable space (U, B) is a set function M : B -> [0, ∞] such that 
+A set U and a lsigma-field B of subsets of U form a measurable space (U, B).
+A measure M defined on measureable space (U, B) is a set function M : B -> [0, ∞] such that 
 1. M(∮) =0
 2. For disjoint Bi and Bj ( i.e. Bi ∩ Bj =∮ ) ⇒ M(∪∞,i=1 Bi) = ∑∞,i=1 M(Bi) (countable additivity)
 
-### Probability is a measure such that M(U) = 1, i.e. normalized measure.
+#결론
+Probability is a measure such that M(U) = 1, i.e. normalized measure.
 
 
-
-
-<marquee><div align='right'><font size=3 color='brown'>Let's learn the programming and how to analyze the data. </font></div></marquee>
-<div align='right'><font size=2 color='gray'> &lt; The End &gt; </font></div>
