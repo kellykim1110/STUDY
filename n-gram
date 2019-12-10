@@ -1,0 +1,20 @@
+n-gram
+
+예를 들면, fine thank you
+
+1-gram (unigram)
+Word level = [ fine, thank, you]
+Character level = [  f,i,n,e, ,t,h,a,n,k, ,y,o,u ]
+
+2-gram (bigram)
+Word level = [ fine thank, thank you]
+Character level = [  fi,in,ne,e , ,t,th,ha,an,nk,k , y,yo,ou ]
+
+3-gram (trigram)
+Word level = [ fine thank you]
+Character level = [  fin,ine,ne ,e t, ,th,tha,han,ank,nk ,k y, yo,you ]
+
+왜 우리는 n-gram을 알아야 할까?
+1. bag of word의 단점(문장의 순서 무시)을 극복 할 수 있다. 
+2. 다음 단어 예측가능
+3. 스펠링의 오타 발견가능
