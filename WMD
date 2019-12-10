@@ -1,0 +1,53 @@
+WMD ( Word mover's distance ) 문서 유사도 구하기
+
+Word2Vec의 유클리디안 거리를 구해서 유사도 측정
+
+
+문장1 The President greets the press in Chicago
+문장2 Obama speaks to the media in Illinois
+문장3 The band gave a concert in Japan
+문장4 Obama speaks in Illinois
+
+가장 먼저 전처리 (remove stop words)를 한 다음, 
+문장1 President greets press Chicago
+문장2 Obama speaks media Illinois
+문장3 band gave concert Japan
+문장4 Obama speaks Illinois
+
+
+Nomalized bag of words 해주기
+[ President, greets, press, Chicago, Obama, speaks, media, Illinois, band, gave, concert, Japan]
+
+d1 = [0.25, 0.25, 0.25, 0.25, 0,0,0,0,0,0,0,0]
+d2 = [0,0,0,0, 0.25, 0.25, 0.25, 0.25, 0,0,0,0]
+d3 = [0,0,0,0,0,0,0,0, 0.25, 0.25, 0.25, 0.25]
+d4 = [0,0,0,0, 0.33, 0.33, 0, 0.33, 0,0,0,0]
+
+Nomalized bag of words with value is greater than 0
+d1 = [0.25, 0.25, 0.25, 0.25]
+d2 = [0.25, 0.25, 0.25, 0.25]
+d3 = [0.25, 0.25, 0.25, 0.25]
+d4 = [0.33, 0.33, 0.33]
+다음을 문장이 주어졌을 때 단어의 함유량이라 보자.
+
+Word distance = nBow value * min(Word2Vec Euclidian Distance)
+문장2 Obama   speaks media Illinois
+1.07=     0.45  +  0.24  + 0.20 + 0.18      문장2는 문장1과 문장 유사도 거리가 1.07
+문장1 President greets press    Chicago
+1.63 = 0.49   +    0.42   + 0.44  +  0.28   문장3은 문장1과 문장 유사도 거리가 1.63
+문장3 band        gave   concert Japan
+
+따라서, 문장 2가 문장1과 유사도가 더 가깝다.
+
+만약 단어의 수가 같지 않다면,
+문장1 President greets press Chicago
+문장4 Obama speaks Illinois
+
+Obama와 President의 단어( 이전에 이미 연관되었던 단어들 ) 유사도는 0.25
+Obama와 greets의 단어 유사도는 0.33 - 0.25 = 0.08
+
+문장4의 speaks, Illinois도 Obama와 마찬가지
+
+[ WMD의 단점 ] : 계산속도가 느리다.
+
+RWMD는 WMD와 비슷하지만 속도가 유사
