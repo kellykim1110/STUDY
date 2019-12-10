@@ -1,0 +1,62 @@
+TF-IDF를 이용한 문서 유사도 측정
+
+
+문장 1 : the bast Italian restaurant enjoy the best pasta
+문장 2 : American restaurant enjoy the best hamburger
+문장 3 : Korean restaurant enjoy the best bibimbap
+문장 4 : the best the best American restaurant
+
+각 단어의 위치를 Iterian, restaurant, enjoy, the, best, pasta, American, hamburger, Korean, bibimbap이라 하고 
+문장 i의 bag of word를 시켜준 것을 di라 하자.
+
+d1 = [1,1,1,2,2,1,0,0,0,0]
+d2 = [0,1,1,1,1,0,1,1,0,0]
+d3 = [0,1,1,1,1,0,0,0,1,1]
+d4 = [0,1,0,2,2,0,1,0,0,0]
+
+<bag of word 의 코사인 유사도>
+di와 dj의 코사인 유사도는 di*(dj)T / (||di||*||dj||)
+d1,d2,d3과 d4와의 코사인 유사도는 각각 0.82, 0.77, 0.65이다. 
+
+
+이 때, 문장 그대로 보면 문장4와 가장 유사해야하는 문장은 문장2이다.
+the,best의 빈도 때문이므로 이를 보완하기 위해 TF-IDF를 이용하자.
+ 
+<bag of word를 이용한 TF-IDF의 코사인 유사도>
+
+ [ IDF ]
+Iterian=log(4/1)=0.6 
+ restaurant=log(4/4)=0
+ enjoy=log(4/3)=0.13
+ the=log(4/4)=0
+ best=log(4/4)=0 
+ pasta=log(4/1)=0.6
+ American=log(4/2)=0.3
+ hamburger=log(4/1)=0.6
+ Korean=log(4/1)=0.6
+ bibimbap=log(4/1)=0.6
+
+[ TF-IDF Bag of Words ]
+d1=[0.075, 0, 0.016, 0, 0, 0.075, 0,0,0,0]
+d2 = [0,0, 0.02, 0,0,0, 0.05, 0.1, 0,0]
+d3 = [0,0, 0.02, 0,0,0,0,0, 0.1, 0.1]
+d4 = [0,0,0,0,0,0, 0.05, 0,0,0]
+
+이를 토대로
+d1,d2,d3과 d4와의 코사인 유사도는 각각 0, 0.5, 0이다. 
+
+
+[ TF-IDF Bag of Words 의 강점]
+1. 쉽게 문장유사도를 구할 수 있다.
+2. 단어 유사성을 유지할 수 있다.
+3. 빈도로 인한 단어 유사성 가능성이 적다.
+
+[ TF-IDF Bag of Words 의 단점]
+1. 단어의 형태만 본다.
+2. 문장의 토픽을 고려하지 않는다.
+3. 같은 뜻을 가지지만 다른 단어로 해석한다.
+
+[ TF-IDF Bag of Words 의 단점을 극복하는 방법]
+1. LSA ( 잠재의미분석 )
+2.Word Embeddings (Word2Vec, Glove)
+3. ConceptNet
