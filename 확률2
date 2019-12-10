@@ -1,0 +1,26 @@
+앞에서 확률을 다음과 같이 정의 하였다.
+: Probability is a measure such that M(U) = 1, i.e. normalized measure.
+
+확률을 정의하기 위해 다음을 먼저 알자.
+-The random experiment should be well defined.
+-The outcomes are all the possible results of the random experient each of which cannot be further divided.
+-The sample point w : a point representing an outcome
+
+ 
+[ Definition Probability P ]
+
+P defined on a measureable space (U , A) is a set function 
+P : A -> [0,1] where A is a sigma-field such that the axioms
+1. P(∮) = 0
+2. P(A) ≥ 0,  ∀A ⊆ U
+3. For disjoint Bi and Bj ( i.e. Bi ∩ Bj =∮ ) ⇒ M(∪∞,i=1 Bi) = ∑∞,i=1 M(Bi) (countable additivity)
+4. P(U) = 1
+
+앞에서 정의한 확률에 의해 조건부확률을 얘기 해 줄 수 있고 ( i.e. 조건부 확률 p(x|y) = p(x ^ y) / p(y) )
+
+
+[ Bayes' rule ]
+p(x|y) = p(x ^ y) / p(y) = p(x|y) = p(y ^ x) / p(y) = p(y|x) p(x) / p(y)
+
+P(x|y) is called posterior probability.
+P(x) is called prior probability.
