@@ -1,0 +1,22 @@
+잠재의미분석 ( LDA )
+
+햄버거와 피자는 서로 다른 단어이기 때문에 TF-IDF나 Bag of Words의 유사도가 0이 나온다.
+( ∵ TF-IDF나 Bag of Words의 유사도는 토픽 기반이 아닌 단어 기반 )
+
+LDA는 토픽기반의 유사도 측정법 중 하나
+
+문장 i의 Bag of words가 di라고 하면
+word-document matrix = [ d1 d2 d3 ... dn ] = A라 하자.
+
+After SVD matrix decompopsition, 
+A ≒ U × ∑ × (V)T where U : Word matrix for Topic
+                                        ∑ : Topic Strength
+                                        V : Document matrix for Topic
+
+Document Vector = ∑ × (V)T 
+
+Choose optimal demension size. ∑ is Descending order With importance.
+특정 행렬값이하는 무시하고 특정 행렬값 이상만 계산하자. 
+이에 따른 Document Vector의 값으로 토픽 유사도 측정 가능 
+
+참조 :  https://www.youtube.com/watch?v=GVPTGq53H5I&list=PLVNY1HnUlO26qqZznHVWAqjS1fWw0zqnT
