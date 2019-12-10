@@ -1,0 +1,34 @@
+TF-IDF에서
+TF : Term Frequency
+IDF : Inverse Document Frequency
+TF-IDF = TF * IDF
+
+TF-IDF는 각 단어별로 문장의 연관성을 알고 싶을 때 사용한다.
+여기서 문장의 연관성은 각 단어별로 문장의 정보를 얼마나 가지고 있는지를 의미한다.
+
+TF : Term Frequency
+어떠한 문장이 주어졌을 때 한 단어가 그 문장에 얼마나 출현되었는지(발생빈도)를 나타내는 것 
+가설 : 문장이 있을 때 한 단어가 여러번 출현 했다면, 그 단어는 문장에 연관성이 클 것 이다. 
+
+예를 들면, 'a new car, used car, car review'라는 문장에서 TF score을 나타내면,
+a =1/7, new=1/7, car=3/7, used=1/7, review=1/7 이다.
+그렇다면 car은 주어진 문장에서 중요한 단어이다.
+
+하지만,
+'a friend in need is a friend indeed'라는 문장에서는 TF score이
+a=2/8, friend=2/8, in=1/8, need=1/8, is=1/8, indeed=1/8이다.
+이 문장에서 friend는 중요 단어이지만 a는 불용어이므로 중요하지 않다.
+이처럼 어떤 문장이든 연관이 없지만 자주 출현하는 단어가 있다.
+이러한 TF의 단점을 보안하기 위해 IDF를 알아보자.
+
+IDF : Inverse Document Frequency
+IDF score = Log(총 문장의 개수 / 이 단어가 포함된 문장의 개수)
+
+문장 1 :  'a new car, used car, car review'
+문장 2 : 'a friend in need is a friend indeed'
+IDF score
+a =log(2/2) = 0, new=log(2/1)=0.3 , car=log(2/1)=0.3 , used=log(2/1)=0.3 , review=log(2/1)=0.3  , friend=log(2/1)=0.3 , in=log(2/1)=0.3 , need=log(2/1)=0.3 , is=log(2/1)=0.3 , indeed=log(2/1)=0.3 
+
+즉, TF-IDF = TF * IDF이므로
+문장 1의 TF-IDF score은 car=0.13으로 가장 높고
+문장 2의 TF-IDF score은 friend=0.08로 가장 높다.
