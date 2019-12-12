@@ -1,0 +1,18 @@
+독립사건
+사건 A와 사건 B가 서로 영향을 주지 않는 상태 
+P(A) X P(B) = p(A ∩ B)
+
+배반사건
+두사건이 아예 공통 분모가 없는 상태 
+A ∩ B = ∮
+
+베이즈 규칙
+사건 A1, A2, A3가 서로 배반(mutually exclusive)이고 A1, A2, A3의 합집합이 표본공간U과 같으면 사건 A1, A2, A3는 표본공간 S의 분할이다.
+만일 사건B가 표본공간U에 속하고 P(B)=P(A1∩B)+P(A2∩B)+P(A3∩B)가 성립한다면, 전확률공식 (= 베이즈 법칙)은 다음과 같다.
+
+P(B)=P(A1)P(B|A1)+P(A2)P(B|A2)+P(A3)P(B|A3)
+
+이때 P(A1), P(A2), P(A3)는 사전확률,
+ P(B|A1), P(B|A2), P(B|A3)는 가능도(=우도)(likelihood probability)라 한다.
+
+참조 : https://ratsgo.github.io/statistics/2017/07/01/bayes/
